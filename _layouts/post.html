@@ -2,16 +2,87 @@
 layout: default
 ---
 
-<article class="post">
-  <h1>{{ page.title }}</h1>
+<style>
 
-  <div class="entry">
-    {{ content }}
-  </div>
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
-  <div class="date">
-    Written on {{ page.date | date: "%B %e, %Y" }}
-  </div>
+.is-paddingless-horizontal { padding-left: 0; padding-right: 0; }
 
+.grid {
+	display: grid;
+	grid-template-columns:
+		[xl-start] 1fr 1.5rem [md-start] minmax(0, 624px) [md-end] 1.5rem 1fr [xl-end];
+}
+
+.grid *  { grid-column: md; }
+.grid-xl { grid-column: xl; }
+
+@media (max-width: 672px) {
+	:root {
+		font-size: 90%;
+	}
+}
+
+</style>
+	<body>
+		
+		<!-- .section -->
+		<section class="section is-paddingless-horizontal" style="padding-top: 0;">
+			<div class="container grid" style="max-width: 1024px;">
+				
+
+				<!-- .section -->
+				<div class="section is-paddingless-horizontal">
+					<p class="is-size-7">{{ page.date | date: "%B %e, %Y" }}</p>
+					<h1 class="title is-2">
+						{{ page.title }}
+					</h1>
+					<h2 class="subtitle is-3 has-text-grey-light">
+						{{ page.header }}
+					</h2>
+				</div>
+				<!-- /.section -->
+				
+				<!-- .columns -->
+				<figure class="columns is-mobile is-variable is-0 is-marginless grid-xl">
+					<div class="column">
+						<div class="image card">
+							<a><img src="images/blog-1.png"></a>
+						</div>
+					</div>
+					<div class="column">
+						<div class="image card">
+							<a><img src="images/blog-2.png"></a>
+						</div>
+					</div>
+					<div class="column">
+						<div class="image card">
+							<a><img src="images/blog-3.png"></a>
+						</div>
+					</div>
+				</figure>
+				<figcaption class="level">
+					<small class="level-item has-text-grey">
+						The blog we'll build. Click to continue on Scrimba
+					</small>
+				</figcaption>
+				<!-- /.columns -->
+
+				<div class="content is-medium">
+					<p>
+						    {{ content }}
+					</p>
+				</div>
+
+			</div>
   {% include disqus.html %}
-</article>
+		</section>
+		<!-- /.section -->
+
+	</body>
+</html>
+
