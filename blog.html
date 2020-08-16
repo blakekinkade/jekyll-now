@@ -2,32 +2,33 @@
 layout: default
 ---
 	<body>
-<div id="archives">
-<div class="dropdown">
+<div id="filtering">
+
+<div class="dropdown is-active">
   <div class="dropdown-trigger">
-    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
       <span>Filter by Topic</span>
       <span class="icon is-small">
         <i class="fas fa-angle-down" aria-hidden="true"></i>
       </span>
     </button>
   </div>
-  <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+  <div class="dropdown-menu" id="dropdown-menu" role="menu">
     <div class="dropdown-content">
-        {% for category in site.categories %}
+      {% for category in site.categories %}
           {% capture category_name %}{{ category | first }}{% endcapture %}
-
       <a href="#" class="dropdown-item">
-{{ category_name }}
-
+        {{ category_name }}
       </a>
+      {% endfor %}
 
-      <hr class="dropdown-divider">
     </div>
-    {% endfor %}
   </div>
 </div>
+
 </div>
+		
+		
   <section class="container">
   <div class="columns">
 	  
