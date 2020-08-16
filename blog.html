@@ -4,8 +4,9 @@ layout: default
 	<body>
   <section class="container">
   <div class="columns">
+	  
  {% for post in site.posts %}
-   <div class="column is-4">
+   <article class="column is-4">
       <div class="card">
         <div class="card-image">
           <figure class="image is-4by3">
@@ -14,15 +15,15 @@ layout: default
         </div>
         <div class="card-content">
             <div class="headings">
-              <p class="title is-4">{{ post.title }}</p>
+              <h1 class="title is-4">{{ post.title }}</h1>
               <p class="is-7">{{ post.date | date: "%B %e, %Y" }}</p>
             </div>
             <div class="content">
-              <p class="subtitle is-6">{{ post.header }}</p>
+              <h2 class="subtitle is-6">{{ post.header }}</h2>
             </div>
         </div>
       </div>
-    </div> 
+    </article> 
   {% endfor %}
   </div>
   </section>
