@@ -77,11 +77,8 @@ layout: default
               <p class="is-size-7">{{ post.date | date: "%B %e, %Y" }}</p>
             </div>
             <div class="content">
-              <h2 class="subtitle is-6">{{ post.header }}</h2>
-		<button class="button is-text is-pulled-right">
-			<a href="{{ site.baseurl }}/{{ post.title }}">Read More ></a>
-		</button>
-
+              <h2 class="subtitle is-6">{{ post.header }}</h2><br>
+		<a href="{{ site.baseurl }}/{{ post.title }}" class="button is-primary">Read More</a>
             </div>
 
         </div>
